@@ -1,0 +1,23 @@
+{
+  "name": "doc-as-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathaliaspinula/doc-as-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathaliaspinula/doc-as-code/issues"
+  },
+  "homepage": "https://github.com/nathaliaspinula/doc-as-code#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
