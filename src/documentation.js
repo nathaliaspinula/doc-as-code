@@ -2,6 +2,7 @@ const fs = require('fs');
 const GeneralInformation = require('./domain/GeneralInformation');
 const Path = require("./domain/Path");
 const Method = require("./domain/Method");
+const Parameter = require("./domain/Parameter");
 
 class Documentation {
     constructor(jsonDocument) {
@@ -30,7 +31,16 @@ class Documentation {
                     description: swagger.paths[path][method].description,
                     requestBody: swagger.paths[path][method].requestBody,
                     responses: swagger.paths[path][method].responses,
-                    security: swagger.paths[path][method].security
+                    security: swagger.paths[path][method].security,
+                    parameters: swagger.paths[path][method].parameters?.map(parameter =>
+                        new Parameter({
+                            pIn: parameter.in,
+                            name: parameter.name,
+                            description: parameter.description,
+                            type: parameter.schema.type,
+                            required: parameter.required,
+                        })
+                    ),
                 }))
             }).build();
 
